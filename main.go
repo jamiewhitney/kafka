@@ -10,7 +10,7 @@ import (
 )
 
 var (
-	brokers = []string{"192.168.1.171:9092", "192.168.1.172:9092", "192.168.1.173:9092"}
+	brokers = []string{"localhost:9092"}
 	topic = "test-topic"
 	GroupID = "test-group"
 )
