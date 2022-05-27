@@ -19,13 +19,13 @@ type Producer struct {
 }
 
 func main() {
-	topic := "my-test-topic"
+	topic := "test-topic"
 	hosts := "localhost:9092"
-	group := "my-test-group"
+	group := "test-group"
 
 	writer := NewProducer(hosts)
 
-	go writer.Write(topic)
+	writer.Write(topic)
 
 	reader := NewConsumer(hosts, []string{topic}, group)
 

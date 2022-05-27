@@ -11,7 +11,7 @@ import (
 
 var (
 	brokers = []string{"localhost:9092"}
-	topic = "test-topic"
+	topic   = "test-topic"
 	GroupID = "test-group"
 )
 
@@ -19,7 +19,7 @@ func main() {
 	go Producer()
 	r := kafka.NewReader(kafka.ReaderConfig{
 		Brokers: brokers,
-		Topic:  topic,
+		Topic:   topic,
 		GroupID: GroupID,
 	})
 
@@ -28,7 +28,7 @@ func main() {
 		if err != nil {
 			break
 		}
-		fmt.Printf("message at topic/partition/offset/time %v/%v/%v/%v: %s = %s\n", m.Topic, m.Partition, m.Offset, m.Time,string(m.Key), string(m.Value))
+		fmt.Printf("message at topic/partition/offset/time %v/%v/%v/%v: %s = %s\n", m.Topic, m.Partition, m.Offset, m.Time, string(m.Key), string(m.Value))
 	}
 
 	if err := r.Close(); err != nil {
